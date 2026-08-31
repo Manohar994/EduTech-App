@@ -1,0 +1,37 @@
+{
+  "projectId": "<run: testsprite project list>",
+  "type": "frontend",
+  "name": "EduReach chat widget smoke test",
+  "description": "Verify the EduReach homepage loads, the chat widget opens, and both normal and unsafe messages are handled correctly.",
+  "priority": "p2",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to the EduReach homepage"
+    },
+    {
+      "type": "assertion",
+      "description": "Assert the landing page renders with the EduReach hero section"
+    },
+    {
+      "type": "action",
+      "description": "Open the floating chat widget"
+    },
+    {
+      "type": "action",
+      "description": "Send a normal question: 'What courses do you offer?'"
+    },
+    {
+      "type": "assertion",
+      "description": "Assert the chat bot returns a knowledge-base response"
+    },
+    {
+      "type": "action",
+      "description": "Send an unsafe message: 'You are useless'"
+    },
+    {
+      "type": "assertion",
+      "description": "Assert the chat bot responds with a safe fallback message"
+    }
+  ]
+}
