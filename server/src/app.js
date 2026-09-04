@@ -3,8 +3,6 @@ import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import hpp from "hpp";
-import xssClean from "xss-clean";
-import mongoSanitize from "express-mongo-sanitize";
 import chatRoutes from "./routes/chat.routes.js";
 import errorHandler from "./middleware/error-handler.middleware.js";
 
@@ -67,8 +65,6 @@ app.use(
     })
 );
 app.use(express.json({ limit: "10mb" }));
-app.use(xssClean());
-app.use(mongoSanitize());
 app.use(hpp());
 
 app.use("/api/chat", apiLimiter, chatRoutes);
